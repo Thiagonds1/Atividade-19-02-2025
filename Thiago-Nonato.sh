@@ -20,7 +20,7 @@ echo -e "\033[1;95m Coletando informações de rede... \033[0m"
 
 ss >> $COLLECTED_DIR/active_connections.txt
 
-netstat -a -n >> $COLLECTED_DIR/open_ports.txt
+netstat -tulnp > $COLLECTED_DIR/open_ports.txt
 
 echo -e "\033[1;95m Coletando lista de processos... \033[0m"
 
