@@ -26,7 +26,7 @@ echo -e "\033[1;95m Coletando lista de processos... \033[0m"
 
 ps aux >> $COLLECTED_DIR/process_list.txt
 
-echo -e "033[1;95 Coletado logs do sistema... \033[0m"
+echo -e "033[1;95m Coletado logs do sistema... \033[0m"
 
 cp -r /var/log/syslog $COLLECTED_DIR/syslog.log
 cp -r /var/log/auth.log $COLLECTED_DIR/auth.log
@@ -36,7 +36,7 @@ echo -e "\033[1;95m Coletando arquivos de configuração... \033[0m"
 
 cp -r /etc $COLLECTED_DIR/backup
 
-echo -e "\033[1;95 Listando o diretório raiz... \033[0m"
+echo -e "\033[1;95m Listando o diretório raiz... \033[0m"
 
 HOSTNAME=$(hostname)
 
