@@ -12,7 +12,7 @@ mkdir -p "$COLLECTED_DIR"
 
 echo -e "\033[1;35m Coletando arquivos do sistema... \033[0m"
 
-echo -e "\033[1;95 Listando informações sobre disco e partições... \033[Om"
+echo -e "\033[1;95m Listando informações sobre disco e partições... \033[Om"
 
 lsblk >> $COLLECTED_DIR/disk-info.txt
 
