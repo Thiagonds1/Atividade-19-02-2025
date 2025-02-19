@@ -1,11 +1,9 @@
 #!/bin/bash
-
 echo -e "\033[1;34m TraceHunter-Forensic Collector \033[0m"
 
-echo -e "\033[1;34m TraceHunter-Forensic Collector \033m"
-
-if [[ $EUID -ne 0 ]]; then echo -e "\033[1;31m Este script precisa ser executado
-
+if [[ $EUID -ne 0 ]]; then
+        echo -e "\033[1;31m Este script precisa ser executado\033[0m"
+        exit 1
 fi
 
 COLLECTED_DIR="collected_files"
