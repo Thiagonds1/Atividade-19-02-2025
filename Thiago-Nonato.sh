@@ -20,13 +20,13 @@ echo -e "\033[1;95m Coletando informações de rede... \033[0m"
 
 ss >> $COLLECTED_DIR/active_connections.txt
 
-netstat -tulnp > $COLLECTED_DIR/open_ports.txt
+netstat -nltp > $COLLECTED_DIR/open_ports.txt
 
 echo -e "\033[1;95m Coletando lista de processos... \033[0m"
 
 ps aux >> $COLLECTED_DIR/process_list.txt
 
-echo -e "033[1;95m Coletado logs do sistema... \033[0m"
+echo -e "\033[1;95m Coletado logs do sistema... \033[0m"
 
 cp -r /var/log/syslog $COLLECTED_DIR/syslog.log
 cp -r /var/log/auth.log $COLLECTED_DIR/auth.log
@@ -40,6 +40,8 @@ echo -e "\033[1;95m Listando o diretório raiz... \033[0m"
 
 HOSTNAME=$(hostname)
 
-date "+%Y-%M-%D %H:%M:%S"
+DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
 
-tar -czf "TraceHunter_${HOSTNAME}_${DATAHORA}.taz.gz" "COLLECTED_DIR"
+OUTPUT_FILE="TraceHunter_${HOSTNAME}_${DATETIME}.tar.gz"
+
+tar -czf "$OUTPUT_FILE" -C "$COLLECTED_DIR" .
